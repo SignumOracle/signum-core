@@ -3,10 +3,10 @@
 This package contains reporting tools and datafeeds for Signum oracle.
 
 # Contracts
-[SignumFlex](https://scan.9mm.pro/address/0x09D07923EA339A2aDe40f44BCEE74b2A88a99a54?tab=contract)
-[Autopay](https://scan.9mm.pro/address/0xE928B99aA62823BA4Ebc3FE3402b9D8D2e2694Ed?tab=contract)
-[Governance](https://scan.9mm.pro/address/0x2124F2773425BCb252A495E446e6Cb738AAc57cd?tab=contract)
-[SignumToken](https://scan.9mm.pro/address/0x113c82608A84bD47eE90a7A498b2663f3A7B977C?tab=contract)
+[SignumFlex](https://scan.9mm.pro/address/0x25baEbFAc231836bd5AFd1F211f6E8306f2BCC1e?tab=contract)
+[Autopay](https://scan.9mm.pro/address/0x5CBcA25A8CD90d7b80Ba40a67E40E4D027738743?tab=contract)
+[Governance](https://scan.9mm.pro/address/0x7F0c51a9dC0AAf30247dEb14C696BF7e75a6C139?tab=contract)
+[SignumToken](https://scan.9mm.pro/address/0x410a1Cb708e0724d1f9013EE31945E5E3F978a44?tab=contract)
 
 # How to Install Signum
 This is a step by step guide for how to install Signum Feeds using the command line. Signum Feeds is an open source client based on a fork of Tellor’s Telliot Feeds for interacting with the Signum oracle. The methods outlined here were confirmed on a fresh installation of Ubuntu 20.04 LTS. Individual commands will differ with other environments (particularly for installing python 3.9), but the process is relatively similar for setting up Telliot on Mac (requires homebrew). You may use powershell if you’re familiar with using python on windows or use WSL (ubuntu 20.04) for better compatibility with this guide.
@@ -165,10 +165,10 @@ Start signum with this command:
 ```
 telliot report -a PulsechainAccount -qt pls-usd-spot -p YOLO -ncr
 ```
-Here’s what it means: You want to report the query type PLS/USD spot (-qt pls-usd-spot), you don’t care about checking for profit (-p YOLO), and you’re not listening for autopay tips (-ncr (no check rewards)). Remember to replace “PulsechainAccount” with your Telliot account name if different.
+Here’s what it means: You want to report the query type PLS/USD spot (-qt pls-usd-spot), you don’t care about checking for profit (-p YOLO), and you’re not listening for autopay tips (-ncr (no check rewards)). Remember to replace “PulsechainAccount” with your Signum account name if different.
 
 # Running Signum to Submit Values on an Interval (Ignoring Profitability)
-Start telliot with this command:
+Start Signum with this command:
 ```
 telliot report -a PulsechainAccount -qt pls-usd-spot -p YOLO -ncr -wp 3600
 ```
@@ -188,7 +188,7 @@ Signum can be used to listen for these tips and submit the requested data automa
 
 Again, please use this functionality at your own risk. Profits are possible but not guaranteed.
 
-Start signum with this command:
+Start Signum with this command:
 ```
 telliot report -a PulsechainAccount -p 50 -wp 60
 ```
@@ -197,13 +197,15 @@ Here’s what it means: You want to check to see if there is a profitable tip ev
 Note: A wait period of 60 seconds is recommended if you’re using a RPC service like infura. This will limit your node calls so that you don’t have to pay subscription fees. If you’re not worried about making too many node calls the [-wp] flag can be left out.
 
 # Running Signum Conditionally
-Report new price only when price change is over a percentage threshold:
+Report new price only when price change is over a percentage threshold.
+Start Signum with this command:
 ```
 telliot conditional -a PulsechainAccount -qt pls-usd-spot -pc 0.001
 ```
 Here's what it means: You want to report conditionally the pls-usd spot price, but only if the percent change (-pc) is greater than 0.10%.
 
-Report new price whenever the current price is 24 hours old:
+Report new price whenever the current price is 24 hours old.
+Start Signum with this command:
 ```
 telliot conditional -a PulsechainAccount -qt pls-usd-spot -st 86400
 ```
