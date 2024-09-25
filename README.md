@@ -206,6 +206,60 @@ Accounts can be deleted with:
 telliot account delete AccountName
 ```
 
+# Update Signum Feeds
+
+1. Delete Existing signum-feeds and signum-core directories
+
+```
+rm -r signum-core
+```
+and then
+```
+rm -r signum-feeds
+```
+
+2. Clone the signum-core repo:
+
+```
+git clone https://github.com/SignumOracle/signum-core
+```
+
+3. Clone the signum-feeds repo:
+
+```
+git clone https://github.com/SignumOracle/signum-feeds
+```
+
+4. Change directory (cd) into the signum-feeds folder that you just downloaded:
+
+```
+cd signum-feeds
+```
+
+5. Install signum-feeds with the command:
+
+```
+pip install -e .
+```
+
+6. Change directory to the signum core folder with
+
+```
+cd ..
+```
+
+and then
+
+```
+cd signum-core
+```
+
+7. Install signum-core with the command:
+
+```
+pip install -e .
+```
+
 # Using Signum to submit a PLS/USD Spot Price (Ignoring Profitability)
 
 This is the exciting part! We’re going to start signum, confirm the configuration, and enter our account password. Signum will deposit our stake automatically, fetch the PLS/USD price data from multiple APIs, find the median value, and submit that value to the Signum database.
@@ -294,7 +348,7 @@ Options:
   -mpfr, --max-priority-fee-range INTEGER
                                   the maximum range of priority fees to use in
                                   gwei (default 3 gwei)
-  -qt, --query-tag [stb-usd-spot|plsx-usd-spot|inc-usd-spot|tetrap-usd-spot|ohm-eth-spot|vsq-usd-spot|bct-usd-spot|dai-usd-spot|ric-usd-spot|idle-usd-spot|mkr-usd-spot|sushi-usd-spot|matic-usd-spot|usdc-usd-spot|gas-price-oracle-example|eur-usd-spot|snapshot-proposal-example|eth-usd-30day_volatility|numeric-api-response-example|diva-protocol-example|string-query-example|pls-usd-spot|eth-usd-spot|btc-usd-spot|tellor-rng-example|twap-eth-usd-example|ampleforth-uspce|ampleforth-custom|albt-usd-spot|rai-usd-spot|xdai-usd-spot|eth-btc-spot|evm-call-example|avax-usd-spot|aave-usd-spot|badger-usd-spot|bch-usd-spot|comp-usd-spot|crv-usd-spot|doge-usd-spot|dot-usd-spot|eul-usd-spot|fil-usd-spot|gno-usd-spot|link-usd-spot|ltc-usd-spot|shib-usd-spot|uni-usd-spot|usdt-usd-spot|yfi-usd-spot|mimicry-crypto-coven-tami|mimicry-nft-index-usd|mimicry-nft-index-eth|mimicry-mashup-example|steth-btc-spot|steth-usd-spot|reth-btc-spot|reth-usd-spot|wsteth-usd-spot|wsteth-eth-spot|op-usd-spot|grt-usd-spot|cny-usd-spot|eth-jpy-spot|brl-usd-spot|corn-usd-custom|rice-usd-custom|wheat-usd-custom|soy-usd-custom|ousd-usd-spot|oeth-eth-spot|wld-usd-spot|sweth-usd-spot|diva-usd-spot|cbeth-usd-spot|wbeth-usd-spot|oeth-usd-spot|pyth-usd-spot|ogv-eth-spot|brc20-ordi-usd-spot|meth-usd-spot|wbtc-usd-spot|mnt-usd-spot|usdy-usd-spot|wmnt-usd-spot|btc-bal-example|btc-bal-current-example|evm-bal-example|evm-bal-current-example|primeeth-eth-spot|usdm-usd-spot|wusdm-usd-spot|sdai-usd-spot|sfrax-usd-spot|frax-usd-spot|gyd-usd-spot|leth-usd-spot|frxeth-usd-spot|filecid-query-example|ezeth-usd-spot|weeth-usd-spot|wrseth-usd-spot|rseth-usd-spot|mode-usd-spot|tlos-usd-spot|tara-usd-spot]
+  -qt, --query-tag [stb-usd-spot|plsx-usd-spot|inc-usd-spot|tetrap-usd-spot|phex-usd-spot|daipulsechain-usd-spot|solidx-usd-spot|plsp-usd-spot|spark-usd-swap|axis-usd-spot|watt-usd-spot|cst-usd-spot|phux-usd-spot|texan-usd-spot|bnb-usd-spot|xrp-usd-spot|hex-usd-spot|hedron-usd-spot|paxg-usd-spot|kinesissilver-usd-spot|gramplatinum-usd-spot|ohm-eth-spot|vsq-usd-spot|bct-usd-spot|dai-usd-spot|ric-usd-spot|idle-usd-spot|mkr-usd-spot|sushi-usd-spot|matic-usd-spot|usdc-usd-spot|gas-price-oracle-example|eur-usd-spot|snapshot-proposal-example|eth-usd-30day_volatility|numeric-api-response-example|diva-protocol-example|string-query-example|pls-usd-spot|eth-usd-spot|btc-usd-spot|tellor-rng-example|twap-eth-usd-example|ampleforth-uspce|ampleforth-custom|albt-usd-spot|rai-usd-spot|xdai-usd-spot|eth-btc-spot|evm-call-example|avax-usd-spot|aave-usd-spot|badger-usd-spot|bch-usd-spot|comp-usd-spot|crv-usd-spot|doge-usd-spot|dot-usd-spot|eul-usd-spot|fil-usd-spot|gno-usd-spot|link-usd-spot|ltc-usd-spot|shib-usd-spot|uni-usd-spot|usdt-usd-spot|yfi-usd-spot|mimicry-crypto-coven-tami|mimicry-nft-index-usd|mimicry-nft-index-eth|mimicry-mashup-example|steth-btc-spot|steth-usd-spot|reth-btc-spot|reth-usd-spot|wsteth-usd-spot|wsteth-eth-spot|op-usd-spot|grt-usd-spot|cny-usd-spot|eth-jpy-spot|brl-usd-spot|corn-usd-custom|rice-usd-custom|wheat-usd-custom|soy-usd-custom|ousd-usd-spot|oeth-eth-spot|wld-usd-spot|sweth-usd-spot|diva-usd-spot|cbeth-usd-spot|wbeth-usd-spot|oeth-usd-spot|pyth-usd-spot|ogv-eth-spot|brc20-ordi-usd-spot|meth-usd-spot|wbtc-usd-spot|mnt-usd-spot|usdy-usd-spot|wmnt-usd-spot|btc-bal-example|btc-bal-current-example|evm-bal-example|evm-bal-current-example|primeeth-eth-spot|usdm-usd-spot|wusdm-usd-spot|sdai-usd-spot|sfrax-usd-spot|frax-usd-spot|gyd-usd-spot|leth-usd-spot|frxeth-usd-spot|filecid-query-example|ezeth-usd-spot|weeth-usd-spot|wrseth-usd-spot|rseth-usd-spot|mode-usd-spot|tlos-usd-spot|tara-usd-spot]
                                   select datafeed using query tag
   -wp, --wait-period INTEGER      wait period between feed suggestion calls
   --submit-once / --submit-continuous
@@ -368,7 +422,7 @@ Options:
   -mpfr, --max-priority-fee-range INTEGER
                                   the maximum range of priority fees to use in
                                   gwei (default 3 gwei)
-  -qt, --query-tag [stb-usd-spot|plsx-usd-spot|inc-usd-spot|tetrap-usd-spot|ohm-eth-spot|vsq-usd-spot|bct-usd-spot|dai-usd-spot|ric-usd-spot|idle-usd-spot|mkr-usd-spot|sushi-usd-spot|matic-usd-spot|usdc-usd-spot|gas-price-oracle-example|eur-usd-spot|snapshot-proposal-example|eth-usd-30day_volatility|numeric-api-response-example|diva-protocol-example|string-query-example|pls-usd-spot|eth-usd-spot|btc-usd-spot|tellor-rng-example|twap-eth-usd-example|ampleforth-uspce|ampleforth-custom|albt-usd-spot|rai-usd-spot|xdai-usd-spot|eth-btc-spot|evm-call-example|avax-usd-spot|aave-usd-spot|badger-usd-spot|bch-usd-spot|comp-usd-spot|crv-usd-spot|doge-usd-spot|dot-usd-spot|eul-usd-spot|fil-usd-spot|gno-usd-spot|link-usd-spot|ltc-usd-spot|shib-usd-spot|uni-usd-spot|usdt-usd-spot|yfi-usd-spot|mimicry-crypto-coven-tami|mimicry-nft-index-usd|mimicry-nft-index-eth|mimicry-mashup-example|steth-btc-spot|steth-usd-spot|reth-btc-spot|reth-usd-spot|wsteth-usd-spot|wsteth-eth-spot|op-usd-spot|grt-usd-spot|cny-usd-spot|eth-jpy-spot|brl-usd-spot|corn-usd-custom|rice-usd-custom|wheat-usd-custom|soy-usd-custom|ousd-usd-spot|oeth-eth-spot|wld-usd-spot|sweth-usd-spot|diva-usd-spot|cbeth-usd-spot|wbeth-usd-spot|oeth-usd-spot|pyth-usd-spot|ogv-eth-spot|brc20-ordi-usd-spot|meth-usd-spot|wbtc-usd-spot|mnt-usd-spot|usdy-usd-spot|wmnt-usd-spot|btc-bal-example|btc-bal-current-example|evm-bal-example|evm-bal-current-example|primeeth-eth-spot|usdm-usd-spot|wusdm-usd-spot|sdai-usd-spot|sfrax-usd-spot|frax-usd-spot|gyd-usd-spot|leth-usd-spot|frxeth-usd-spot|filecid-query-example|ezeth-usd-spot|weeth-usd-spot|wrseth-usd-spot|rseth-usd-spot|mode-usd-spot|tlos-usd-spot|tara-usd-spot]
+  -qt, --query-tag [stb-usd-spot|plsx-usd-spot|inc-usd-spot|tetrap-usd-spot|phex-usd-spot|daipulsechain-usd-spot|solidx-usd-spot|plsp-usd-spot|spark-usd-swap|axis-usd-spot|watt-usd-spot|cst-usd-spot|phux-usd-spot|texan-usd-spot|bnb-usd-spot|xrp-usd-spot|hex-usd-spot|hedron-usd-spot|paxg-usd-spot|kinesissilver-usd-spot|gramplatinum-usd-spot|ohm-eth-spot|vsq-usd-spot|bct-usd-spot|dai-usd-spot|ric-usd-spot|idle-usd-spot|mkr-usd-spot|sushi-usd-spot|matic-usd-spot|usdc-usd-spot|gas-price-oracle-example|eur-usd-spot|snapshot-proposal-example|eth-usd-30day_volatility|numeric-api-response-example|diva-protocol-example|string-query-example|pls-usd-spot|eth-usd-spot|btc-usd-spot|tellor-rng-example|twap-eth-usd-example|ampleforth-uspce|ampleforth-custom|albt-usd-spot|rai-usd-spot|xdai-usd-spot|eth-btc-spot|evm-call-example|avax-usd-spot|aave-usd-spot|badger-usd-spot|bch-usd-spot|comp-usd-spot|crv-usd-spot|doge-usd-spot|dot-usd-spot|eul-usd-spot|fil-usd-spot|gno-usd-spot|link-usd-spot|ltc-usd-spot|shib-usd-spot|uni-usd-spot|usdt-usd-spot|yfi-usd-spot|mimicry-crypto-coven-tami|mimicry-nft-index-usd|mimicry-nft-index-eth|mimicry-mashup-example|steth-btc-spot|steth-usd-spot|reth-btc-spot|reth-usd-spot|wsteth-usd-spot|wsteth-eth-spot|op-usd-spot|grt-usd-spot|cny-usd-spot|eth-jpy-spot|brl-usd-spot|corn-usd-custom|rice-usd-custom|wheat-usd-custom|soy-usd-custom|ousd-usd-spot|oeth-eth-spot|wld-usd-spot|sweth-usd-spot|diva-usd-spot|cbeth-usd-spot|wbeth-usd-spot|oeth-usd-spot|pyth-usd-spot|ogv-eth-spot|brc20-ordi-usd-spot|meth-usd-spot|wbtc-usd-spot|mnt-usd-spot|usdy-usd-spot|wmnt-usd-spot|btc-bal-example|btc-bal-current-example|evm-bal-example|evm-bal-current-example|primeeth-eth-spot|usdm-usd-spot|wusdm-usd-spot|sdai-usd-spot|sfrax-usd-spot|frax-usd-spot|gyd-usd-spot|leth-usd-spot|frxeth-usd-spot|filecid-query-example|ezeth-usd-spot|weeth-usd-spot|wrseth-usd-spot|rseth-usd-spot|mode-usd-spot|tlos-usd-spot|tara-usd-spot]
                                   select datafeed using query tag
   -wp, --wait-period INTEGER      wait period between feed suggestion calls
   --submit-once / --submit-continuous
