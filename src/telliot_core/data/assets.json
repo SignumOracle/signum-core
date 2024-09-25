@@ -28,11 +28,11 @@
   },
   {
     "type": "ERC20Token",
-    "id": "trb",
-    "name": "Tellor Tributes",
-    "symbol": "TRB",
+    "id": "stb",
+    "name": "Signum Tributes",
+    "symbol": "STB",
     "chain_id": 1,
-    "address": "0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0",
+    "address": "0x410a1Cb708e0724d1f9013EE31945E5E3F978a44",
     "decimals": 18
   },
   {
@@ -71,12 +71,12 @@
     "address": "0x0000000000000000000000000000000000001010",
     "decimals": 18
   },
-   {
+  {
     "type": "ERC20Token",
     "id": "toucan-protocol-base-carbon-tonne",
     "name": "Toucan Protocol: Base Carbon Tonne",
     "symbol": "BCT",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0x2f800db0fdb5223b3c3f354886d907a671414a7f",
     "decimals": 18
   },
@@ -85,7 +85,7 @@
     "id": "dai",
     "name": "Dai Stablecoin",
     "symbol": "DAI",
-     "chain_id": 1,
+    "chain_id": 1,
     "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
     "decimals": 18
   },
@@ -94,7 +94,7 @@
     "id": "dai-matic",
     "name": "(POS) Dai Stablecoin",
     "symbol": "DAI",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
     "decimals": 18
   },
@@ -103,7 +103,7 @@
     "id": "usdc",
     "name": "USD Coin (POS)(USDC)",
     "symbol": "DAI",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
     "decimals": 6
   },
@@ -112,7 +112,7 @@
     "id": "sushi",
     "name": "SushiToken (POS)(SUSHI)",
     "symbol": "SUSHI",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
     "decimals": 18
   },
@@ -121,7 +121,7 @@
     "id": "idle",
     "name": "Idle (POS)(IDLE)",
     "symbol": "IDLE",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0xc25351811983818c9fe6d8c580531819c8ade90f",
     "decimals": 18
   },
@@ -130,7 +130,7 @@
     "id": "ricochet",
     "name": "Ricochet (RIC)",
     "symbol": "RIC",
-     "chain_id": 137,
+    "chain_id": 137,
     "address": "0x263026e7e53dbfdce5ae55ade22493f828922965",
     "decimals": 18
   },
@@ -139,7 +139,7 @@
     "id": "mkr",
     "name": "Maker (MKR)",
     "symbol": "MKR",
-     "chain_id": 1,
+    "chain_id": 1,
     "address": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
     "decimals": 18
   }

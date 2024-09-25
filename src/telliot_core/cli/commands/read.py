@@ -35,7 +35,7 @@ async def gettimebasedreward(ctx: click.Context) -> None:
         if not status.ok:
             print(status)
         else:
-            print(f"{result} TRB")
+            print(f"{result} STB")
 
 
 @oracle.command()

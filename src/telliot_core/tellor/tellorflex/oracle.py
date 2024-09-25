@@ -67,8 +67,8 @@ class TellorFlexOracleContract(Contract):
         stake, status = await self.read("getStakeAmount")
 
         if status.ok:
-            stake_in_trb = int(stake) / 1.0e18
-            return stake_in_trb
+            stake_in_stb = int(stake) / 1.0e18
+            return stake_in_stb
         else:
             logger.error("Error reading TellorFlexOracleContract")
             logger.error(status)
@@ -99,8 +99,8 @@ class TellorFlexOracleContract(Contract):
         total_stake, status = await self.read("getTotalStakeAmount")
 
         if status.ok:
-            total_stake_trb = int(total_stake) / 1.0e18
-            return total_stake_trb
+            total_stake_stb = int(total_stake) / 1.0e18
+            return total_stake_stb
         else:
             logger.error("Error reading TellorFlexOracleContract")
             logger.error(status)
